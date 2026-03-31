@@ -1000,6 +1000,47 @@ button[type="button"]:hover {
   box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
 }
 
+/* Медиа-запросы для мобильных устройств */
+@media (max-width: 768px) {
+  header {
+    padding: 4rem 1rem 2rem 1rem; /* Увеличиваем верхний padding для мобильных */
+  }
+
+  .header-controls {
+    top: 1.5rem; /* Сдвигаем кнопки ниже */
+  }
+
+  h1 {
+    font-size: 2rem; /* Уменьшаем размер заголовка на мобильных */
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    padding: 5rem 1rem 2rem 1rem; /* Еще больше padding для очень маленьких экранов */
+  }
+
+  .header-controls {
+    top: 2rem;
+    right: 0.5rem;
+  }
+
+  .contacts-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  #themeToggle {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+
 button[type="submit"]:active,
 button[type="button"]:active {
   transform: translateY(-1px);
