@@ -781,13 +781,6 @@ function filterProducts() {
   renderProducts();
 }
 
-// Обработчики событий для поиска и фильтра
-searchInput.addEventListener('input', filterProducts);
-categoryFilter.addEventListener('change', filterProducts);
-
-// Смена темы
-themeToggle.addEventListener('click', toggleTheme);
-
 // Функция смены темы
 function toggleTheme() {
   const body = document.body;
@@ -889,7 +882,7 @@ function openImageModal(product) {
   if (product.video) {
     modalContent.innerHTML = `<video controls autoplay><source src="./uploads/${product.video}" type="video/mp4"></video>`;
   } else if (product.image && product.image !== 'BLANK') {
-    modalContent.innerHTML = `<img src="./uploads/${product.image}" alt="${product.name}">`;
+    modalContent.innerHTML = `<img src="${product.image}" alt="${product.name}">`;
   }
   imageModal.classList.remove('hidden');
 }
@@ -970,44 +963,65 @@ function setupSmoothScroll() {
   }
 }
 
-// Инициализация
-loadTheme();
-loadProducts();
+// Инициализация при загрузке DOM
+document.addEventListener('DOMContentLoaded', () => {
+  loadTheme();
+  loadProducts();
 
-// Обработчики для модала контактов
-const contactsBtn = document.getElementById('contactsBtn');
-const contactsModal = document.getElementById('contactsModal');
-const closeContactsModal = document.getElementById('closeContactsModal');
+  // Заполнение категорий
+  populateCategories();
 
-if (contactsBtn && contactsModal && closeContactsModal) {
-  // Открытие модального окна
-  contactsBtn.addEventListener('click', () => {
-    contactsModal.classList.remove('hidden');
-    document.body.style.overflow = 'hidden';
-  });
+  // Обработчики для модала контактов
+  const contactsBtn = document.getElementById('contactsBtn');
+  const contactsModal = document.getElementById('contactsModal');
+  const closeContactsModal = document.getElementById('closeContactsModal');
 
-  // Закрытие модального окна
-  closeContactsModal.addEventListener('click', () => {
-    contactsModal.classList.add('hidden');
-    document.body.style.overflow = '';
-  });
+  if (contactsBtn && contactsModal && closeContactsModal) {
+    // Открытие модального окна
+    contactsBtn.addEventListener('click', () => {
+      contactsModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    });
 
-  // Закрытие при клике вне модального окна
-  contactsModal.addEventListener('click', (e) => {
-    if (e.target === contactsModal) {
+    // Закрытие модального окна
+    closeContactsModal.addEventListener('click', () => {
       contactsModal.classList.add('hidden');
       document.body.style.overflow = '';
-    }
-  });
+    });
 
-  // Закрытие при нажатии Escape
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !contactsModal.classList.contains('hidden')) {  
-      contactsModal.classList.add('hidden');
-      document.body.style.overflow = '';
-    }
-  });
-}
+    // Закрытие при клике вне модального окна
+    contactsModal.addEventListener('click', (e) => {
+      if (e.target === contactsModal) {
+        contactsModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    });
+
+    // Закрытие при нажатии Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !contactsModal.classList.contains('hidden')) {  
+        contactsModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }
+    });
+  }
+
+  // Обработчик для переключения темы
+  const themeToggle = document.getElementById('themeToggle');
+  if (themeToggle) {
+    themeToggle.addEventListener('click', toggleTheme);
+  }
+
+  // Обработчики для поиска и фильтра
+  const searchInput = document.getElementById('searchInput');
+  const categoryFilter = document.getElementById('categoryFilter');
+  if (searchInput) {
+    searchInput.addEventListener('input', filterProducts);
+  }
+  if (categoryFilter) {
+    categoryFilter.addEventListener('change', filterProducts);
+  }
+});
 
 // Запуск анимаций при готовности DOM
 window.addEventListener('load', () => {
