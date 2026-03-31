@@ -974,6 +974,41 @@ function setupSmoothScroll() {
 loadTheme();
 loadProducts();
 
+// Обработчики для модала контактов
+const contactsBtn = document.getElementById('contactsBtn');
+const contactsModal = document.getElementById('contactsModal');
+const closeContactsModal = document.getElementById('closeContactsModal');
+
+if (contactsBtn && contactsModal && closeContactsModal) {
+  // Открытие модального окна
+  contactsBtn.addEventListener('click', () => {
+    contactsModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  });
+
+  // Закрытие модального окна
+  closeContactsModal.addEventListener('click', () => {
+    contactsModal.classList.add('hidden');
+    document.body.style.overflow = '';
+  });
+
+  // Закрытие при клике вне модального окна
+  contactsModal.addEventListener('click', (e) => {
+    if (e.target === contactsModal) {
+      contactsModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  });
+
+  // Закрытие при нажатии Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !contactsModal.classList.contains('hidden')) {  
+      contactsModal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  });
+}
+
 // Запуск анимаций при готовности DOM
 window.addEventListener('load', () => {
   setupScrollAnimations();
