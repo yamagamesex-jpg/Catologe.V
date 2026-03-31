@@ -15,6 +15,10 @@
     <p>Продукция Хозяюшка ИП "Левченко"</p>
     <p>ТМ &lt;ХОЗЯЮШКА&gt;</p>
     <div class="header-controls">
+      <button id="contactsBtn" title="Контакты" class="contacts-button">
+        <span class="whatsapp-icon">💬</span>
+        <span class="button-text">Контакты</span>
+      </button>
       <button id="themeToggle">🌙</button>
     </div>
   </header>
@@ -59,6 +63,29 @@
   <div id="imageModal" class="modal hidden">
     <span class="close" id="closeImageModal">&times;</span>
     <div id="modalContent"></div>
+  </div>
+
+  <!-- Модал для контактов -->
+  <div id="contactsModal" class="modal hidden">
+    <div class="modal-content contacts-modal">
+      <span class="close" id="closeContactsModal">&times;</span>
+      <h2>Контакты</h2>
+      <div class="contacts-list">
+        <div class="contact-item">
+          <div class="contact-info">
+            <span class="contact-icon">📱</span>
+            <a href="https://wa.me/77473033258" target="_blank" class="contact-number whatsapp-link">+7 747 303 3258</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-info">
+            <span class="contact-icon">📱</span>
+            <a href="https://wa.me/77711697060" target="_blank" class="contact-number whatsapp-link">+7 771 169 7060</a>
+          </div>
+        </div>
+      </div>
+      <p class="contact-note">Выберите удобный способ связи для заказа продукции!</p>
+    </div>
   </div>
 
   <!-- Toast уведомления -->
