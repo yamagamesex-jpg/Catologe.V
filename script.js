@@ -718,6 +718,16 @@ let products = [
       "video": null,
       "active": true,
       "category": "Грудки"
+  },
+  {
+    "id": "d3fc9a8e-c970-4f10-9682-7fc2c1de5628",
+    "name": "Сосиски в тесте",
+    "description": "Состав : тесто дрожжевое , сосиска куринная",
+    "price": 2000,
+    "image": "uploads/e4be14e8-7034-4cbc-8bd3-8784229b90d1.jpeg",
+    "video": null,
+    "active": true,
+    "category": "остальное"
   }
 ];
 let filteredProducts = [];
