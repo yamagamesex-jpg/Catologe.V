@@ -733,7 +733,7 @@ let products = [
     "id": "d3fc9a8e-c970-4f10-9682-7fc2c1de5628",
     "name": "Ребра свиные горячего копчения",
     "description": "",
-    "price": 0,
+    "price": 4300,
     "image": "uploads/photo_5370876966547952484_y.jpg",
     "video": null,
     "active": true,
