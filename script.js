@@ -712,7 +712,7 @@ let products = [
   {
       "id": "afs1fd1-d2ac-4c86-81f1-d7e5f8b1cd0d",
       "name": "Утиная грудка",
-      "description": "3600 тг/кг",
+      "description": "4000 тг/кг",
       "price": 0,
       "image": "uploads/photo_5352996059916997714_y.png",
       "video": null,
