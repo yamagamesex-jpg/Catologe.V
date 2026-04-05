@@ -738,6 +738,16 @@ let products = [
     "video": null,
     "active": true,
     "category": "остальное"
+  },
+  {
+    "id": "d3fc9a8e-c970-4f10-9682-7fc2c1de5628",
+    "name": "Самса свежемороженая с курицей 1,3,5 Кг",
+    "description": "",
+    "price": 3000,
+    "image": "uploads/photo_5375565537531860181_y.jpg",
+    "video": null,
+    "active": true,
+    "category": "остальное"
   }
 ];
 let filteredProducts = [];
