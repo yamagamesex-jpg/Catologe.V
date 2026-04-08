@@ -584,7 +584,7 @@ let products = [
     "id": "39f92ee9-7720-4b14-ad06-4abc16ad5e62",
     "name": "Люля-кебаб",
     "description": "Состав: фарш куриный, фарш говядина, лук, \r\nзелень, соль, п/п, перец ч/м, специи",
-    "price": 2400,
+    "price": 2600,
     "image": "uploads/1185b6e9-5c4e-435d-ac17-8a96993e6cd2.png",
     "video": null,
     "active": true,
